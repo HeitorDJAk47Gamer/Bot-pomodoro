@@ -60,12 +60,12 @@ async def pomodoro_session(interaction: disnake.ApplicationCommandInteraction):
             # Período de trabalho: muta e deafen o usuário e envia notificação via DM
             await safe_edit(member, True)
             await safe_send_dm(member, "🍅 Pomodoro iniciado! Você foi mutado e seu fone desativado para focar na call.")
-            await asyncio.sleep(1 * 60)  # 25 minutos de trabalho
+            await asyncio.sleep(25 * 60)  # 25 minutos de trabalho
 
             # Período de pausa: reverte mudo e deafen e envia notificação via DM
             await safe_edit(member, False)
             await safe_send_dm(member, "⏸️ Hora da pausa! Você foi desmutado e seu fone reativado para conversar.")
-            await asyncio.sleep(30)  # 5 minutos de pausa
+            await asyncio.sleep(5 * 60)  # 5 minutos de pausa
 
             # Notifica o início de um novo ciclo
             await safe_send_dm(member, "🔁 Novo ciclo Pomodoro iniciado!")
